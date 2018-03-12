@@ -1,0 +1,43 @@
+version: '2.0'
+services:
+  web:
+    restart: "no"
+    build: .
+    ports:
+      - "8020:8000"
+    volumes:
+      - .:/movie_graph/
+    depends_on:
+      - database
+    command:
+      "gunicorn --reload -b 0.0.0.0:8000 movie_graph.app"
+
+  database:
+    restart: "no"
+    image: neo4j:latest
+    ports:
+    - "7474"
+    - "7687"
+
+  tests:
+    restart: "no"
+    build: .
+    depends_on:
+      - test-database
+    volumes:
+      - .:/movie_graph/
+    command: py.test
+
+  test-database:
+    restart: "no"
+    image: neo4j:latest
+    ports:
+    - "7474"
+    - "7687"
+
+
+volumes:
+  data:
+    driver: local
+  storage:
+    driver: local

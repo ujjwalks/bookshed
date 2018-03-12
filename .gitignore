@@ -1,0 +1,61 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.coverage
+.cache
+coverage.xml
+.coverage.*
+
+# Rope
+.ropeproject
+
+# Sphinx documentation
+docs/_build/
+
+*.sqlite3
+*.swp
+*.pyc
+*.swo
+*.pyo
+.tox
+*.egg-info
+*_db
+.#*
+\#*
+*~
+.sass-cache
+static/scss/*.css
+storage
+media
+dist
+.noseids
+.DS_Store
+ve
+.idea
+.project
+.pydevproject
+.ropeproject
+.settings
+*.sublime-project
+*.sublime-workspace
+log
+*.db
+chromedriver.log
+.magpie.cookies
+.coverage
+
+# This should only be used for export for dev, not for importing
+data/auto_taggings_with_ident.pkl
+
+.vscode
+
+*.secret.*
+
+.pytest_cache

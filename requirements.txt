@@ -1,0 +1,14 @@
+# Base
+falcon==1.4.1
+neomodel==3.2.5
+gunicorn==19.7.1
+
+# Tests
+pytest==3.4.2
+pytest-cov==2.5.1
+pytest-falcon==0.4.2
+pytest-xdist==1.22.2
+
+# Development
+ipython==6.2.1
+ipdb==0.11
