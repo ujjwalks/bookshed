@@ -1,13 +1,14 @@
 import falcon
 from falcon import testing
-import pytest
 
-from movie_graph.app import api
+from movie_graph.app import application
+
+import pytest
 
 
 @pytest.fixture
 def client():
-    return testing.TestClient(api)
+    return testing.TestClient(application)
 
 
 def test_index(client):
@@ -15,3 +16,4 @@ def test_index(client):
 
     assert response.json == {u'message': u'Hello world!'}
     assert response.status == falcon.HTTP_OK
+

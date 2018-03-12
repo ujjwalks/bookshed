@@ -11,7 +11,6 @@ EXTRA ?=
 FAIL_FAST ?= -x
 LOOP ?= -f --ff
 NOT_SLOW ?= -m "not slow"
-REUSE_DB ?= --reuse-db
 
 # Helpers
 c ?= web
@@ -63,7 +62,6 @@ fast-tests:
 	$(DC_RUN_COMMAND) tests $(PYTEST_CMD) \
 		$(NOT_SLOW) \
 		$(FAIL_FAST) \
-		$(REUSE_DB) \
 		$(EXTRA)
 
 # Will start an ipdb session on failing test
@@ -75,7 +73,6 @@ tests-loop:
 		$(LOOP) \
 		$(NOT_SLOW) \
 		$(FAIL_FAST) \
-		$(REUSE_DB) \
 		$(EXTRA)
 
 ## Non-test targets

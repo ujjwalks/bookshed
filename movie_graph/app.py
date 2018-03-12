@@ -1,13 +1,22 @@
-
-import json
+import os
 
 import falcon
+from neomodel import config
 
-class Index(object):
-    def on_get(self, req, resp):
-        resp.status = falcon.HTTP_200
-        resp.body = json.dumps({u'message': u'Hello world!'})
+from movie_graph import views
 
-api = application = falcon.API()
 
-application.add_route('/', Index())
+
+class App(falcon.API):
+    def __init__(self, *args, **kwargs):
+        super(App, self).__init__(*args, **kwargs)
+        self.register_routes()
+
+        config.DATABASE_URL = os.environ.get(
+            'DATABASE_URL',
+            'bolt://neo4j:neo4j@database:7687')
+
+    def register_routes(self):
+        self.add_route('/', views.Index())
+
+application = App()
