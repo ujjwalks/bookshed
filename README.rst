@@ -1,7 +1,7 @@
 Movie Graph README
 ======================
 
-An experiment in making a an API with Falcon around a Neo4J backend.
+An experiment in making an API with Falcon around a Neo4J backend.
 
 Based off the Neo4J Movie Graph example.
 
