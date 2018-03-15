@@ -10,6 +10,7 @@ from neomodel import (
 
 class Person(StructuredNode):
     name = StringProperty(required=True)
+    followers = RelationshipFrom('Person', 'FOLLOWS')
 
 
 class ActorRel(StructuredRel):
@@ -22,12 +23,11 @@ class ReviewerRel(StructuredRel):
 
 class Movie(StructuredNode):
     title = StringProperty(unique_index=True, required=True)
-    tagline = StringProperty(required=False)
+    tagline = StringProperty()
     released = IntegerProperty(required=True)
 
     directors = RelationshipFrom(Person, 'DIRECTED')
     actors = RelationshipFrom(Person, 'ACTED_IN', model=ActorRel)
     producers = RelationshipFrom(Person, 'PRODUCED')
     reviewers = RelationshipFrom(Person, 'REVIEWED', model=ReviewerRel)
-    followers = RelationshipFrom(Person, 'FOLLOWS')
     writers = RelationshipFrom(Person, 'WROTE')
