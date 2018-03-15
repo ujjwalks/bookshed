@@ -12,6 +12,15 @@ Setup
 
     $ make
 
+Seed Database
+-------------
+
+In order to get the sample graph database loaded up run:
+
+.. code-block:: bash
+
+    $ make seed
+
 Tests
 -----
 

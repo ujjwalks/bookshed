@@ -19,8 +19,6 @@ services:
     image: neo4j:latest
     environment:
       - NEO4J_AUTH=neo4j/foobar
-    volumes:
-      - .:/movie_graph/
     ports:
     - "7473"
     - "7474"
@@ -29,10 +27,10 @@ services:
   tests:
     restart: "no"
     build: .
-    depends_on:
-      - test-database
     volumes:
       - .:/movie_graph/
+    depends_on:
+      - test-database
     environment:
       - DATABASE_URL=bolt://neo4j:foobar@test-database:7687
     command: py.test

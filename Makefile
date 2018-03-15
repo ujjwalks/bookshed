@@ -23,8 +23,11 @@ build:
 web:
 	$(DC_UP_COMMAND) web
 
+seed:
+	$(DC_RUN_COMMAND) web python movie_graph/commands/seed_database.py
+
 bash:
-	$(DC_RUN_COMMAND) --no-deps $(C) $(BASH)
+	$(DC_RUN_COMMAND) $(C) $(BASH)
 
 stop:
 	$(DC_COMMAND) stop

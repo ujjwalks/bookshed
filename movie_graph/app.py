@@ -11,10 +11,10 @@ class App(falcon.API):
         super(App, self).__init__(*args, **kwargs)
         self.register_routes()
         self.config = config
-
         self.config.DATABASE_URL = os.environ.get('DATABASE_URL')
 
     def register_routes(self):
         self.add_route('/', views.Index())
+
 
 application = App()
