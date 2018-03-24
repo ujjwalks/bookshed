@@ -9,8 +9,7 @@ WORKDIR /movie_graph/
 
 # Install system dependencies
 RUN apk upgrade && \
-    apk --no-cache add bash \
-                       curl
+    apk --no-cache add curl netcat-openbsd
 
 COPY . /movie_graph/
 

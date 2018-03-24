@@ -11,8 +11,8 @@ services:
       - database
     environment:
       - DATABASE_URL=bolt://neo4j:foobar@database:7687
-    command:
-      "gunicorn --reload -b 0.0.0.0:8000 movie_graph.app"
+    entrypoint: ./wait-for-service.sh database 7687
+    command: gunicorn --reload -b 0.0.0.0:8000 movie_graph.app
 
   database:
     restart: "no"
@@ -33,7 +33,8 @@ services:
       - test-database
     environment:
       - DATABASE_URL=bolt://neo4j:foobar@test-database:7687
-    command: py.test
+    entrypoint: ./wait-for-service.sh test-database 7687
+    command: pytest
 
   test-database:
     restart: "no"

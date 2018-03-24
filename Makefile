@@ -1,6 +1,6 @@
 .PHONY: tests
 
-BASH ?= /bin/bash
+SHELL ?= /bin/sh
 
 DC_COMMAND = docker-compose
 DC_UP_COMMAND = $(DC_COMMAND) up
@@ -26,8 +26,8 @@ web:
 seed:
 	$(DC_RUN_COMMAND) web python movie_graph/commands/seed_database.py
 
-bash:
-	$(DC_RUN_COMMAND) $(C) $(BASH)
+shell:
+	$(DC_RUN_COMMAND) $(C) $(SHELL)
 
 stop:
 	$(DC_COMMAND) stop
