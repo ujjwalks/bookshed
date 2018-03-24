@@ -11,6 +11,6 @@ pytest-falcon==0.4.2
 pytest-xdist==1.22.2
 
 # Development
-ipython==6.2.1
+ipython==5.5.0
 ipdb==0.11
 flake8==3.5.0
