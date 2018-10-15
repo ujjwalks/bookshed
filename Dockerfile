@@ -1,5 +1,5 @@
 FROM python:3.6-alpine
-LABEL maintainer adioevan@gmail.com
+LABEL maintainer ujjwalks01@gmail.com
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV PYTHONPATH /movie_graph/
