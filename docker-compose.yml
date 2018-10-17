@@ -20,9 +20,9 @@ services:
     environment:
       - NEO4J_AUTH=neo4j/foobar
     ports:
-    - "7473"
-    - "7474"
-    - "7687"
+    - "7473:7473"
+    - "7474:7474"
+    - "7687:7687"
 
   tests:
     restart: "no"
@@ -42,9 +42,9 @@ services:
     environment:
       - NEO4J_AUTH=neo4j/foobar
     ports:
-    - "7473"
-    - "7474"
-    - "7687"
+    - "7473:7473"
+    - "7474:7474"
+    - "7687:7687"
 
 
 volumes:
